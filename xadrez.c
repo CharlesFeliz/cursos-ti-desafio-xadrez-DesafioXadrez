@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
+int main() 
 // Desafio de Xadrez - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
-
-int main() {
+{
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
@@ -27,6 +30,54 @@ int main() {
 
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
+
+    int i;
+    char tipopeca; 
+    
+    printf("\n\nBem-vindo ao jogo Xadrez!\n");
+    printf("Você deve escolher um número peça para movimentar.\n");//Imprime imprime um menu de escolha de uma peça
+    printf("T. Torre\n");
+    printf("B. Bispo\n");
+    printf("R. Rainha\n");
+    
+    printf("Escolha a comparação: ");
+    scanf("%c",&tipopeca);  
+    
+    switch(tipopeca)
+    {
+        case 'T':
+        case 't':
+            printf("\nVocê escolheu a Torre!\n");
+            // Mover a torre 5 casas para a direita
+            for(i=0;i<5;i++){
+            printf("Direita\n");//Imprime a direção do movimento
+            }
+            break;
+            
+        case 'B':
+        case 'b':
+            printf("\nVocê escolheu o Bispo!\n\n");
+            i=0;
+            while(i<5){
+            printf("Direita\n");//Imprime a direção do movimento
+            printf("Superior\n");//Imprime a direção do movimento
+            i++;
+            }
+            break;
+            
+        case 'R':
+        case 'r':
+            i=0;
+            printf("\nVocê escolheu a Rainha!\n\n");
+            do{
+            printf("Esquerda\n");//Imprime a direção do movimento
+            i++;
+            }while(i<8);
+            break;
+        default:
+            printf("\nOpção de peça inválida\n\n");
+            break;
+    }
 
     return 0;
 }
