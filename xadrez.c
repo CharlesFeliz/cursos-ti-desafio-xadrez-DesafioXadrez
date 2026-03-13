@@ -1,44 +1,18 @@
 #include <stdio.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-int main() 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
-{
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
-
-    int i;
+int main() {
+    int i,j;
     char tipopeca; 
     
     printf("\n\nBem-vindo ao jogo Xadrez!\n");
-    printf("Você deve escolher um número peça para movimentar.\n");//Imprime imprime um menu de escolha de uma peça
+    printf("Você deve escolher uma peça para movimentar.\n");
     printf("T. Torre\n");
     printf("B. Bispo\n");
     printf("R. Rainha\n");
+
+    printf("C. Cavalo\n"); // Insersão da peça Cavalo
     
     printf("Escolha a comparação: ");
     scanf("%c",&tipopeca);  
@@ -59,8 +33,8 @@ int main()
             printf("\nVocê escolheu o Bispo!\n\n");
             i=0;
             while(i<5){
-            printf("Direita\n");//Imprime a direção do movimento
-            printf("Superior\n");//Imprime a direção do movimento
+            printf("Direita\n"); //Imprime a direção do movimento
+            printf("Superior\n"); //Imprime a direção do movimento
             i++;
             }
             break;
@@ -70,12 +44,26 @@ int main()
             i=0;
             printf("\nVocê escolheu a Rainha!\n\n");
             do{
-            printf("Esquerda\n");//Imprime a direção do movimento
+            printf("Esquerda\n"); //Imprime a direção do movimento
             i++;
             }while(i<8);
             break;
+            
+        case 'C':
+        case 'c':
+            i=0;
+            printf("\nVocê escolheu o Cavalo!\n\n");
+            while(i<1){ //loop de repetição externo
+            for(j=1;j<=2;j++){//loop de repetição interno
+            printf("Baixo\n");//Imprime a direção do movimento
+            }
+			printf("Esquerda\n"); //Imprime a direção do movimento
+            i++;
+            }
+            break;
+            
         default:
-            printf("\nOpção de peça inválida\n\n");
+            printf("\nOpção de peça inválida\n\n"); 
             break;
     }
 
